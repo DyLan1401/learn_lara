@@ -1,14 +1,75 @@
 @extends('dashboard')
 
 @section('content')
-    <main class="signup-form">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card">
-                        <h3 class="card-header text-center">Create User</h3>
-                        <div class="card-body">
-                            <form action="{{ route('user.postUser') }}" method="POST">
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .register-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            width: 350px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .register-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .register-button {
+            padding: 10px 20px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .reset-link {
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="register-container">
+        <h2>Màn hình đăng ký</h2>
+        <form action="{{ route('user.postUser') }}" method="POST">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <input type="text" placeholder="Name" id="name" class="form-control" name="name"
@@ -32,13 +93,12 @@
                                     @endif
                                 </div>
                                 <div class="d-grid mx-auto">
-                                    <button type="submit" class="btn btn-dark btn-block">Submit</button>
+                                    <button type="submit" class="btn btn-info btn-block">Submit</button>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="footer">
+            Lập trình web @2024
         </div>
-    </main>
+    </div>
+   
 @endsection

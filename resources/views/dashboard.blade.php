@@ -7,7 +7,7 @@
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </head>
 <body>
-<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
+<nav class="navbar  navbar-expand-lg " style="background-color: #e3f2fd;">
     <div class="container">
         <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
