@@ -59,6 +59,7 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'avatar' => 'nullable',
         ]);
 
         $data = $request->all();
@@ -66,6 +67,7 @@ class CrudUserController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'like' => $data['like'],
+             'avatar' => $data['avatar'],
             'github' => $data['github'],
             'password' =>\Illuminate\Support\Facades\Hash::make($data['password'])
         ]);
@@ -115,7 +117,8 @@ class CrudUserController extends Controller
             'name' => 'required',
             'like' => 'required',
             'github' => 'required',
-            'email' => 'required|email|unique:users,id,'.$input['id'],
+            'avatar' => 'nullable',
+                        'email' => 'required|email|unique:users,id,'.$input['id'],
             'password' => 'required|min:6',
         ]);
 
@@ -123,7 +126,10 @@ class CrudUserController extends Controller
        $user->name = $input['name'];
        $user->email = $input['email'];
        $user->like = $input['like'];
+       $user->avatar = $input['avatar'];
        $user->github = $input['github'];
+
+       
        $user->password = $input['password'];
        $user->save();
 
